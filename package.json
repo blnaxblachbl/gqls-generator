@@ -17,6 +17,6 @@
     "path": "^0.12.7"
   },
   "bin": {
-    "gqls-generator": "cli.js"
+    "gqls-generator": "./cli.js"
   }
 }
