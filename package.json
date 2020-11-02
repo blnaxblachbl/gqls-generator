@@ -1,0 +1,22 @@
+{
+  "name": "gqls-generator",
+  "version": "0.0.1",
+  "description": "test parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "start",
+    "start": "node index.js"
+  },
+  "author": "Tit Hardwood",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "graphql": "^15.4.0",
+    "mkdirp": "^1.0.4",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7"
+  },
+  "bin": {
+    "gqls-generator": "cli.js"
+  }
+}

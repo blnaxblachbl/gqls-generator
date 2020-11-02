@@ -1,0 +1,2639 @@
+""""""
+type Query {
+  """"""
+  admin: Admin
+
+  """"""
+  findOneAdmin(where: AdminWhereUniqueInput!): Admin
+
+  """"""
+  findFirstAdmin(where: AdminWhereInput, orderBy: [AdminOrderByInput!], cursor: AdminWhereUniqueInput, distinct: AdminDistinctFieldEnum, skip: Int, take: Int): [Admin!]
+
+  """"""
+  findManyAdmin(where: AdminWhereInput, orderBy: [AdminOrderByInput!], cursor: AdminWhereUniqueInput, distinct: AdminDistinctFieldEnum, skip: Int, take: Int): [Admin!]
+
+  """"""
+  findManyAdminCount(where: AdminWhereInput, orderBy: [AdminOrderByInput!], cursor: AdminWhereUniqueInput, distinct: AdminDistinctFieldEnum, skip: Int, take: Int): Int!
+
+  """"""
+  aggregateAdmin(where: AdminWhereInput, orderBy: [AdminOrderByInput!], cursor: AdminWhereUniqueInput, distinct: AdminDistinctFieldEnum, skip: Int, take: Int): AggregateAdmin
+
+  """"""
+  user: User
+
+  """"""
+  findOneUser(where: UserWhereUniqueInput!): User
+
+  """"""
+  findFirstUser(where: UserWhereInput, orderBy: [UserOrderByInput!], cursor: UserWhereUniqueInput, distinct: UserDistinctFieldEnum, skip: Int, take: Int): [User!]
+
+  """"""
+  findManyUser(where: UserWhereInput, orderBy: [UserOrderByInput!], cursor: UserWhereUniqueInput, distinct: UserDistinctFieldEnum, skip: Int, take: Int): [User!]
+
+  """"""
+  findManyUserCount(where: UserWhereInput, orderBy: [UserOrderByInput!], cursor: UserWhereUniqueInput, distinct: UserDistinctFieldEnum, skip: Int, take: Int): Int!
+
+  """"""
+  aggregateUser(where: UserWhereInput, orderBy: [UserOrderByInput!], cursor: UserWhereUniqueInput, distinct: UserDistinctFieldEnum, skip: Int, take: Int): AggregateUser
+
+  """"""
+  findOneLottery(where: LotteryWhereUniqueInput!): Lottery
+
+  """"""
+  findFirstLottery(where: LotteryWhereInput, orderBy: [LotteryOrderByInput!], cursor: LotteryWhereUniqueInput, distinct: LotteryDistinctFieldEnum, skip: Int, take: Int): [Lottery!]
+
+  """"""
+  findManyLottery(where: LotteryWhereInput, orderBy: [LotteryOrderByInput!], cursor: LotteryWhereUniqueInput, distinct: LotteryDistinctFieldEnum, skip: Int, take: Int): [Lottery!]
+
+  """"""
+  findManyLotteryCount(where: LotteryWhereInput, orderBy: [LotteryOrderByInput!], cursor: LotteryWhereUniqueInput, distinct: LotteryDistinctFieldEnum, skip: Int, take: Int): Int!
+
+  """"""
+  aggregateLottery(where: LotteryWhereInput, orderBy: [LotteryOrderByInput!], cursor: LotteryWhereUniqueInput, distinct: LotteryDistinctFieldEnum, skip: Int, take: Int): AggregateLottery
+
+  """"""
+  findOneEdition(where: EditionWhereUniqueInput!): Edition
+
+  """"""
+  findFirstEdition(where: EditionWhereInput, orderBy: [EditionOrderByInput!], cursor: EditionWhereUniqueInput, distinct: EditionDistinctFieldEnum, skip: Int, take: Int): [Edition!]
+
+  """"""
+  findManyEdition(where: EditionWhereInput, orderBy: [EditionOrderByInput!], cursor: EditionWhereUniqueInput, distinct: EditionDistinctFieldEnum, skip: Int, take: Int): [Edition!]
+
+  """"""
+  findManyEditionCount(where: EditionWhereInput, orderBy: [EditionOrderByInput!], cursor: EditionWhereUniqueInput, distinct: EditionDistinctFieldEnum, skip: Int, take: Int): Int!
+
+  """"""
+  aggregateEdition(where: EditionWhereInput, orderBy: [EditionOrderByInput!], cursor: EditionWhereUniqueInput, distinct: EditionDistinctFieldEnum, skip: Int, take: Int): AggregateEdition
+
+  """"""
+  findOneTicket(where: TicketWhereUniqueInput!): Ticket
+
+  """"""
+  findFirstTicket(where: TicketWhereInput, orderBy: [TicketOrderByInput!], cursor: TicketWhereUniqueInput, distinct: TicketDistinctFieldEnum, skip: Int, take: Int): [Ticket!]
+
+  """"""
+  findManyTicket(where: TicketWhereInput, orderBy: [TicketOrderByInput!], cursor: TicketWhereUniqueInput, distinct: TicketDistinctFieldEnum, skip: Int, take: Int): [Ticket!]
+
+  """"""
+  findManyTicketCount(where: TicketWhereInput, orderBy: [TicketOrderByInput!], cursor: TicketWhereUniqueInput, distinct: TicketDistinctFieldEnum, skip: Int, take: Int): Int!
+
+  """"""
+  aggregateTicket(where: TicketWhereInput, orderBy: [TicketOrderByInput!], cursor: TicketWhereUniqueInput, distinct: TicketDistinctFieldEnum, skip: Int, take: Int): AggregateTicket
+
+  """"""
+  findOneNews(where: NewsWhereUniqueInput!): News
+
+  """"""
+  findFirstNews(where: NewsWhereInput, orderBy: [NewsOrderByInput!], cursor: NewsWhereUniqueInput, distinct: NewsDistinctFieldEnum, skip: Int, take: Int): [News!]
+
+  """"""
+  findManyNews(where: NewsWhereInput, orderBy: [NewsOrderByInput!], cursor: NewsWhereUniqueInput, distinct: NewsDistinctFieldEnum, skip: Int, take: Int): [News!]
+
+  """"""
+  findManyNewsCount(where: NewsWhereInput, orderBy: [NewsOrderByInput!], cursor: NewsWhereUniqueInput, distinct: NewsDistinctFieldEnum, skip: Int, take: Int): Int!
+
+  """"""
+  aggregateNews(where: NewsWhereInput, orderBy: [NewsOrderByInput!], cursor: NewsWhereUniqueInput, distinct: NewsDistinctFieldEnum, skip: Int, take: Int): AggregateNews
+
+  """"""
+  findOnePartner(where: PartnerWhereUniqueInput!): Partner
+
+  """"""
+  findFirstPartner(where: PartnerWhereInput, orderBy: [PartnerOrderByInput!], cursor: PartnerWhereUniqueInput, distinct: PartnerDistinctFieldEnum, skip: Int, take: Int): [Partner!]
+
+  """"""
+  findManyPartner(where: PartnerWhereInput, orderBy: [PartnerOrderByInput!], cursor: PartnerWhereUniqueInput, distinct: PartnerDistinctFieldEnum, skip: Int, take: Int): [Partner!]
+
+  """"""
+  findManyPartnerCount(where: PartnerWhereInput, orderBy: [PartnerOrderByInput!], cursor: PartnerWhereUniqueInput, distinct: PartnerDistinctFieldEnum, skip: Int, take: Int): Int!
+
+  """"""
+  aggregatePartner(where: PartnerWhereInput, orderBy: [PartnerOrderByInput!], cursor: PartnerWhereUniqueInput, distinct: PartnerDistinctFieldEnum, skip: Int, take: Int): AggregatePartner
+}
+
+""""""
+type Admin {
+  """"""
+  id: String!
+
+  """"""
+  createdAt: DateTime!
+
+  """"""
+  updatedAt: DateTime!
+
+  """"""
+  email: String!
+}
+
+""""""
+scalar DateTime
+
+""""""
+input AdminWhereUniqueInput {
+  """"""
+  id: String
+
+  """"""
+  email: String
+}
+
+""""""
+input AdminWhereInput {
+  """"""
+  AND: [AdminWhereInput!]
+
+  """"""
+  OR: [AdminWhereInput!]
+
+  """"""
+  NOT: [AdminWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  email: StringFilter
+
+  """"""
+  password: StringFilter
+
+  """"""
+  repassword: StringNullableFilter
+
+  """"""
+  token: StringNullableFilter
+}
+
+""""""
+input StringFilter {
+  """"""
+  equals: String
+
+  """"""
+  in: [String!]
+
+  """"""
+  notIn: [String!]
+
+  """"""
+  lt: String
+
+  """"""
+  lte: String
+
+  """"""
+  gt: String
+
+  """"""
+  gte: String
+
+  """"""
+  contains: String
+
+  """"""
+  startsWith: String
+
+  """"""
+  endsWith: String
+
+  """"""
+  mode: QueryMode
+
+  """"""
+  not: NestedStringFilter
+}
+
+""""""
+enum QueryMode {
+  """"""
+  default
+
+  """"""
+  insensitive
+}
+
+""""""
+input NestedStringFilter {
+  """"""
+  equals: String
+
+  """"""
+  in: [String!]
+
+  """"""
+  notIn: [String!]
+
+  """"""
+  lt: String
+
+  """"""
+  lte: String
+
+  """"""
+  gt: String
+
+  """"""
+  gte: String
+
+  """"""
+  contains: String
+
+  """"""
+  startsWith: String
+
+  """"""
+  endsWith: String
+
+  """"""
+  not: NestedStringFilter
+}
+
+""""""
+input DateTimeFilter {
+  """"""
+  equals: DateTime
+
+  """"""
+  in: [DateTime!]
+
+  """"""
+  notIn: [DateTime!]
+
+  """"""
+  lt: DateTime
+
+  """"""
+  lte: DateTime
+
+  """"""
+  gt: DateTime
+
+  """"""
+  gte: DateTime
+
+  """"""
+  not: NestedDateTimeFilter
+}
+
+""""""
+input NestedDateTimeFilter {
+  """"""
+  equals: DateTime
+
+  """"""
+  in: [DateTime!]
+
+  """"""
+  notIn: [DateTime!]
+
+  """"""
+  lt: DateTime
+
+  """"""
+  lte: DateTime
+
+  """"""
+  gt: DateTime
+
+  """"""
+  gte: DateTime
+
+  """"""
+  not: NestedDateTimeFilter
+}
+
+""""""
+input StringNullableFilter {
+  """"""
+  equals: String
+
+  """"""
+  in: [String!]
+
+  """"""
+  notIn: [String!]
+
+  """"""
+  lt: String
+
+  """"""
+  lte: String
+
+  """"""
+  gt: String
+
+  """"""
+  gte: String
+
+  """"""
+  contains: String
+
+  """"""
+  startsWith: String
+
+  """"""
+  endsWith: String
+
+  """"""
+  mode: QueryMode
+
+  """"""
+  not: NestedStringNullableFilter
+}
+
+""""""
+input NestedStringNullableFilter {
+  """"""
+  equals: String
+
+  """"""
+  in: [String!]
+
+  """"""
+  notIn: [String!]
+
+  """"""
+  lt: String
+
+  """"""
+  lte: String
+
+  """"""
+  gt: String
+
+  """"""
+  gte: String
+
+  """"""
+  contains: String
+
+  """"""
+  startsWith: String
+
+  """"""
+  endsWith: String
+
+  """"""
+  not: NestedStringNullableFilter
+}
+
+""""""
+input AdminOrderByInput {
+  """"""
+  id: SortOrder
+
+  """"""
+  createdAt: SortOrder
+
+  """"""
+  updatedAt: SortOrder
+
+  """"""
+  email: SortOrder
+
+  """"""
+  password: SortOrder
+
+  """"""
+  repassword: SortOrder
+
+  """"""
+  token: SortOrder
+}
+
+""""""
+enum SortOrder {
+  """"""
+  asc
+
+  """"""
+  desc
+}
+
+""""""
+enum AdminDistinctFieldEnum {
+  """"""
+  id
+
+  """"""
+  createdAt
+
+  """"""
+  updatedAt
+
+  """"""
+  email
+
+  """"""
+  password
+
+  """"""
+  repassword
+
+  """"""
+  token
+}
+
+""""""
+type AggregateAdmin {
+  """"""
+  count: Int!
+}
+
+""""""
+type User {
+  """"""
+  id: String!
+
+  """"""
+  createdAt: DateTime!
+
+  """"""
+  updatedAt: DateTime!
+
+  """"""
+  name: String
+
+  """"""
+  phone: String!
+
+  """"""
+  tickets(where: TicketWhereInput, orderBy: TicketOrderByInput, cursor: TicketWhereUniqueInput, take: Int, skip: Int, distinct: TicketDistinctFieldEnum): [Ticket!]!
+}
+
+""""""
+input TicketWhereInput {
+  """"""
+  AND: [TicketWhereInput!]
+
+  """"""
+  OR: [TicketWhereInput!]
+
+  """"""
+  NOT: [TicketWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  number: IntFilter
+
+  """"""
+  code: StringNullableFilter
+
+  """"""
+  edition: EditionWhereInput
+
+  """"""
+  editionId: StringNullableFilter
+
+  """"""
+  user: UserWhereInput
+
+  """"""
+  userId: StringNullableFilter
+}
+
+""""""
+input IntFilter {
+  """"""
+  equals: Int
+
+  """"""
+  in: [Int!]
+
+  """"""
+  notIn: [Int!]
+
+  """"""
+  lt: Int
+
+  """"""
+  lte: Int
+
+  """"""
+  gt: Int
+
+  """"""
+  gte: Int
+
+  """"""
+  not: NestedIntFilter
+}
+
+""""""
+input NestedIntFilter {
+  """"""
+  equals: Int
+
+  """"""
+  in: [Int!]
+
+  """"""
+  notIn: [Int!]
+
+  """"""
+  lt: Int
+
+  """"""
+  lte: Int
+
+  """"""
+  gt: Int
+
+  """"""
+  gte: Int
+
+  """"""
+  not: NestedIntFilter
+}
+
+""""""
+input EditionWhereInput {
+  """"""
+  AND: [EditionWhereInput!]
+
+  """"""
+  OR: [EditionWhereInput!]
+
+  """"""
+  NOT: [EditionWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  number: IntFilter
+
+  """"""
+  name: StringFilter
+
+  """"""
+  tickets: TicketListRelationFilter
+
+  """"""
+  lottery: LotteryWhereInput
+
+  """"""
+  lotteryId: StringNullableFilter
+}
+
+""""""
+input TicketListRelationFilter {
+  """"""
+  every: TicketWhereInput
+
+  """"""
+  some: TicketWhereInput
+
+  """"""
+  none: TicketWhereInput
+}
+
+""""""
+input LotteryWhereInput {
+  """"""
+  AND: [LotteryWhereInput!]
+
+  """"""
+  OR: [LotteryWhereInput!]
+
+  """"""
+  NOT: [LotteryWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  deadline: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  name: StringFilter
+
+  """"""
+  description: StringFilter
+
+  """"""
+  editions: EditionListRelationFilter
+}
+
+""""""
+input EditionListRelationFilter {
+  """"""
+  every: EditionWhereInput
+
+  """"""
+  some: EditionWhereInput
+
+  """"""
+  none: EditionWhereInput
+}
+
+""""""
+input UserWhereInput {
+  """"""
+  AND: [UserWhereInput!]
+
+  """"""
+  OR: [UserWhereInput!]
+
+  """"""
+  NOT: [UserWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  name: StringNullableFilter
+
+  """"""
+  phone: StringFilter
+
+  """"""
+  code: StringFilter
+
+  """"""
+  token: StringNullableFilter
+
+  """"""
+  tickets: TicketListRelationFilter
+}
+
+""""""
+input TicketOrderByInput {
+  """"""
+  id: SortOrder
+
+  """"""
+  createdAt: SortOrder
+
+  """"""
+  updatedAt: SortOrder
+
+  """"""
+  number: SortOrder
+
+  """"""
+  code: SortOrder
+
+  """"""
+  editionId: SortOrder
+
+  """"""
+  userId: SortOrder
+}
+
+""""""
+input TicketWhereUniqueInput {
+  """"""
+  id: String
+
+  """"""
+  code: String
+}
+
+""""""
+enum TicketDistinctFieldEnum {
+  """"""
+  id
+
+  """"""
+  createdAt
+
+  """"""
+  updatedAt
+
+  """"""
+  number
+
+  """"""
+  code
+
+  """"""
+  editionId
+
+  """"""
+  userId
+}
+
+""""""
+type Ticket {
+  """"""
+  id: String!
+
+  """"""
+  createdAt: DateTime!
+
+  """"""
+  updatedAt: DateTime!
+
+  """"""
+  number: Int!
+
+  """"""
+  code: String
+
+  """"""
+  edition: Edition
+
+  """"""
+  editionId: String
+
+  """"""
+  user: User
+
+  """"""
+  userId: String
+}
+
+""""""
+type Edition {
+  """"""
+  id: String!
+
+  """"""
+  createdAt: DateTime!
+
+  """"""
+  updatedAt: DateTime!
+
+  """"""
+  number: Int!
+
+  """"""
+  name: String!
+
+  """"""
+  tickets(where: TicketWhereInput, orderBy: TicketOrderByInput, cursor: TicketWhereUniqueInput, take: Int, skip: Int, distinct: TicketDistinctFieldEnum): [Ticket!]!
+
+  """"""
+  lottery: Lottery
+
+  """"""
+  lotteryId: String
+}
+
+""""""
+type Lottery {
+  """"""
+  id: String!
+
+  """"""
+  createdAt: DateTime!
+
+  """"""
+  deadline: DateTime!
+
+  """"""
+  updatedAt: DateTime!
+
+  """"""
+  name: String!
+
+  """"""
+  description: String!
+
+  """"""
+  editions(where: EditionWhereInput, orderBy: EditionOrderByInput, cursor: EditionWhereUniqueInput, take: Int, skip: Int, distinct: EditionDistinctFieldEnum): [Edition!]!
+}
+
+""""""
+input EditionOrderByInput {
+  """"""
+  id: SortOrder
+
+  """"""
+  createdAt: SortOrder
+
+  """"""
+  updatedAt: SortOrder
+
+  """"""
+  number: SortOrder
+
+  """"""
+  name: SortOrder
+
+  """"""
+  lotteryId: SortOrder
+}
+
+""""""
+input EditionWhereUniqueInput {
+  """"""
+  id: String
+}
+
+""""""
+enum EditionDistinctFieldEnum {
+  """"""
+  id
+
+  """"""
+  createdAt
+
+  """"""
+  updatedAt
+
+  """"""
+  number
+
+  """"""
+  name
+
+  """"""
+  lotteryId
+}
+
+""""""
+input UserWhereUniqueInput {
+  """"""
+  id: String
+
+  """"""
+  phone: String
+}
+
+""""""
+input UserOrderByInput {
+  """"""
+  id: SortOrder
+
+  """"""
+  createdAt: SortOrder
+
+  """"""
+  updatedAt: SortOrder
+
+  """"""
+  name: SortOrder
+
+  """"""
+  phone: SortOrder
+
+  """"""
+  code: SortOrder
+
+  """"""
+  token: SortOrder
+}
+
+""""""
+enum UserDistinctFieldEnum {
+  """"""
+  id
+
+  """"""
+  createdAt
+
+  """"""
+  updatedAt
+
+  """"""
+  name
+
+  """"""
+  phone
+
+  """"""
+  code
+
+  """"""
+  token
+}
+
+""""""
+type AggregateUser {
+  """"""
+  count: Int!
+}
+
+""""""
+input LotteryWhereUniqueInput {
+  """"""
+  id: String
+}
+
+""""""
+input LotteryOrderByInput {
+  """"""
+  id: SortOrder
+
+  """"""
+  createdAt: SortOrder
+
+  """"""
+  deadline: SortOrder
+
+  """"""
+  updatedAt: SortOrder
+
+  """"""
+  name: SortOrder
+
+  """"""
+  description: SortOrder
+}
+
+""""""
+enum LotteryDistinctFieldEnum {
+  """"""
+  id
+
+  """"""
+  createdAt
+
+  """"""
+  deadline
+
+  """"""
+  updatedAt
+
+  """"""
+  name
+
+  """"""
+  description
+}
+
+""""""
+type AggregateLottery {
+  """"""
+  count: Int!
+}
+
+""""""
+type AggregateEdition {
+  """"""
+  count: Int!
+
+  """"""
+  avg: EditionAvgAggregateOutputType
+
+  """"""
+  sum: EditionSumAggregateOutputType
+
+  """"""
+  min: EditionMinAggregateOutputType
+
+  """"""
+  max: EditionMaxAggregateOutputType
+}
+
+""""""
+type EditionAvgAggregateOutputType {
+  """"""
+  number: Float!
+}
+
+""""""
+type EditionSumAggregateOutputType {
+  """"""
+  number: Int!
+}
+
+""""""
+type EditionMinAggregateOutputType {
+  """"""
+  number: Int!
+}
+
+""""""
+type EditionMaxAggregateOutputType {
+  """"""
+  number: Int!
+}
+
+""""""
+type AggregateTicket {
+  """"""
+  count: Int!
+
+  """"""
+  avg: TicketAvgAggregateOutputType
+
+  """"""
+  sum: TicketSumAggregateOutputType
+
+  """"""
+  min: TicketMinAggregateOutputType
+
+  """"""
+  max: TicketMaxAggregateOutputType
+}
+
+""""""
+type TicketAvgAggregateOutputType {
+  """"""
+  number: Float!
+}
+
+""""""
+type TicketSumAggregateOutputType {
+  """"""
+  number: Int!
+}
+
+""""""
+type TicketMinAggregateOutputType {
+  """"""
+  number: Int!
+}
+
+""""""
+type TicketMaxAggregateOutputType {
+  """"""
+  number: Int!
+}
+
+""""""
+input NewsWhereUniqueInput {
+  """"""
+  id: String
+}
+
+""""""
+type News {
+  """"""
+  id: String!
+
+  """"""
+  createdAt: DateTime!
+
+  """"""
+  updatedAt: DateTime!
+
+  """"""
+  name: String!
+
+  """"""
+  content: String!
+}
+
+""""""
+input NewsWhereInput {
+  """"""
+  AND: [NewsWhereInput!]
+
+  """"""
+  OR: [NewsWhereInput!]
+
+  """"""
+  NOT: [NewsWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  name: StringFilter
+
+  """"""
+  content: StringFilter
+}
+
+""""""
+input NewsOrderByInput {
+  """"""
+  id: SortOrder
+
+  """"""
+  createdAt: SortOrder
+
+  """"""
+  updatedAt: SortOrder
+
+  """"""
+  name: SortOrder
+
+  """"""
+  content: SortOrder
+}
+
+""""""
+enum NewsDistinctFieldEnum {
+  """"""
+  id
+
+  """"""
+  createdAt
+
+  """"""
+  updatedAt
+
+  """"""
+  name
+
+  """"""
+  content
+}
+
+""""""
+type AggregateNews {
+  """"""
+  count: Int!
+}
+
+""""""
+input PartnerWhereUniqueInput {
+  """"""
+  id: String
+}
+
+""""""
+type Partner {
+  """"""
+  id: String!
+
+  """"""
+  createdAt: DateTime!
+
+  """"""
+  updatedAt: DateTime!
+
+  """"""
+  name: String!
+
+  """"""
+  description: String!
+
+  """"""
+  logo: String!
+
+  """"""
+  url: String
+}
+
+""""""
+input PartnerWhereInput {
+  """"""
+  AND: [PartnerWhereInput!]
+
+  """"""
+  OR: [PartnerWhereInput!]
+
+  """"""
+  NOT: [PartnerWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  name: StringFilter
+
+  """"""
+  description: StringFilter
+
+  """"""
+  logo: StringFilter
+
+  """"""
+  url: StringNullableFilter
+}
+
+""""""
+input PartnerOrderByInput {
+  """"""
+  id: SortOrder
+
+  """"""
+  createdAt: SortOrder
+
+  """"""
+  updatedAt: SortOrder
+
+  """"""
+  name: SortOrder
+
+  """"""
+  description: SortOrder
+
+  """"""
+  logo: SortOrder
+
+  """"""
+  url: SortOrder
+}
+
+""""""
+enum PartnerDistinctFieldEnum {
+  """"""
+  id
+
+  """"""
+  createdAt
+
+  """"""
+  updatedAt
+
+  """"""
+  name
+
+  """"""
+  description
+
+  """"""
+  logo
+
+  """"""
+  url
+}
+
+""""""
+type AggregatePartner {
+  """"""
+  count: Int!
+}
+
+""""""
+type Mutation {
+  """"""
+  signInAdmin(data: SignInAdminInput!): String!
+
+  """"""
+  forgotAdmin(data: ForgotAdminInput!): Boolean!
+
+  """"""
+  refreshAdmin: String!
+
+  """"""
+  updateOneAdmin(where: AdminWhereUniqueInput!, data: AdminUpdateInput!): Admin!
+
+  """"""
+  signInUser(data: SignInUserInput!): Boolean!
+
+  """"""
+  signInConfirmUser(data: SignInConfirmUserInput!): SignInPayload!
+
+  """"""
+  refreshUser: String!
+
+  """"""
+  createOneUser(data: UserCreateInput!): User!
+
+  """"""
+  updateOneUser(where: UserWhereUniqueInput!, data: UserUpdateInput!): User!
+
+  """"""
+  deleteOneUser(where: UserWhereUniqueInput!): User
+
+  """"""
+  createOneLottery(data: LotteryCreateInput!): Lottery!
+
+  """"""
+  updateOneLottery(where: LotteryWhereUniqueInput!, data: LotteryUpdateInput!): Lottery!
+
+  """"""
+  deleteOneLottery(where: LotteryWhereUniqueInput!): Lottery
+
+  """"""
+  createOneEdition(data: EditionCreateInput!): Edition!
+
+  """"""
+  updateOneEdition(where: EditionWhereUniqueInput!, data: EditionUpdateInput!): Edition!
+
+  """"""
+  deleteOneEdition(where: EditionWhereUniqueInput!): Edition
+
+  """"""
+  createManyTicket(where: EditionWhereUniqueInput!, data: TicketManyCreateInput!): Int!
+
+  """"""
+  updateOneTicket(where: TicketWhereUniqueInput!, data: TicketUpdateInput!): Ticket!
+
+  """"""
+  deleteOneTicket(where: TicketWhereUniqueInput!): Ticket
+
+  """"""
+  createOneNews(data: NewsCreateInput!): News!
+
+  """"""
+  updateOneNews(where: NewsWhereUniqueInput!, data: NewsUpdateInput!): News!
+
+  """"""
+  deleteOneNews(where: NewsWhereUniqueInput!): News
+
+  """"""
+  createOnePartner(data: PartnerCreateInput!): Partner!
+
+  """"""
+  updateOnePartner(where: PartnerWhereUniqueInput!, data: PartnerUpdateInput!): Partner!
+
+  """"""
+  deleteOnePartner(where: PartnerWhereUniqueInput!): Partner
+
+  """"""
+  deleteImages(data: DeleteImageInput!): Boolean
+
+  """"""
+  uploadImages(data: UploadImageInput!): [String]
+}
+
+""""""
+input SignInAdminInput {
+  """"""
+  email: String!
+
+  """"""
+  password: String!
+}
+
+""""""
+input ForgotAdminInput {
+  """"""
+  email: String!
+}
+
+""""""
+input AdminUpdateInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  email: StringFieldUpdateOperationsInput
+
+  """"""
+  password: StringFieldUpdateOperationsInput
+
+  """"""
+  repassword: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  token: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input StringFieldUpdateOperationsInput {
+  """"""
+  set: String
+}
+
+""""""
+input DateTimeFieldUpdateOperationsInput {
+  """"""
+  set: DateTime
+}
+
+""""""
+input NullableStringFieldUpdateOperationsInput {
+  """"""
+  set: String
+}
+
+""""""
+input SignInUserInput {
+  """"""
+  phone: String!
+}
+
+""""""
+input SignInConfirmUserInput {
+  """"""
+  phone: String!
+
+  """"""
+  code: String!
+}
+
+""""""
+type SignInPayload {
+  """"""
+  user: User!
+
+  """"""
+  token: String!
+}
+
+""""""
+input UserCreateInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  name: String
+
+  """"""
+  phone: String!
+
+  """"""
+  code: String!
+
+  """"""
+  token: String
+
+  """"""
+  tickets: TicketCreateManyWithoutUserInput
+}
+
+""""""
+input TicketCreateManyWithoutUserInput {
+  """"""
+  create: [TicketCreateWithoutUserInput!]
+
+  """"""
+  connect: [TicketWhereUniqueInput!]
+}
+
+""""""
+input TicketCreateWithoutUserInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  number: Int
+
+  """"""
+  code: String
+
+  """"""
+  edition: EditionCreateOneWithoutTicketsInput
+}
+
+""""""
+input EditionCreateOneWithoutTicketsInput {
+  """"""
+  create: EditionCreateWithoutTicketsInput
+
+  """"""
+  connect: EditionWhereUniqueInput
+}
+
+""""""
+input EditionCreateWithoutTicketsInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  number: Int
+
+  """"""
+  name: String!
+
+  """"""
+  lottery: LotteryCreateOneWithoutEditionsInput
+}
+
+""""""
+input LotteryCreateOneWithoutEditionsInput {
+  """"""
+  create: LotteryCreateWithoutEditionsInput
+
+  """"""
+  connect: LotteryWhereUniqueInput
+}
+
+""""""
+input LotteryCreateWithoutEditionsInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  deadline: DateTime!
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  name: String!
+
+  """"""
+  description: String!
+}
+
+""""""
+input UserUpdateInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  phone: StringFieldUpdateOperationsInput
+
+  """"""
+  code: StringFieldUpdateOperationsInput
+
+  """"""
+  token: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  tickets: TicketUpdateManyWithoutUserInput
+}
+
+""""""
+input TicketUpdateManyWithoutUserInput {
+  """"""
+  create: [TicketCreateWithoutUserInput!]
+
+  """"""
+  connect: [TicketWhereUniqueInput!]
+
+  """"""
+  set: [TicketWhereUniqueInput!]
+
+  """"""
+  disconnect: [TicketWhereUniqueInput!]
+
+  """"""
+  delete: [TicketWhereUniqueInput!]
+
+  """"""
+  update: [TicketUpdateWithWhereUniqueWithoutUserInput!]
+
+  """"""
+  updateMany: [TicketUpdateManyWithWhereNestedInput!]
+
+  """"""
+  deleteMany: [TicketScalarWhereInput!]
+
+  """"""
+  upsert: [TicketUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+""""""
+input TicketUpdateWithWhereUniqueWithoutUserInput {
+  """"""
+  where: TicketWhereUniqueInput!
+
+  """"""
+  data: TicketUpdateWithoutUserDataInput!
+}
+
+""""""
+input TicketUpdateWithoutUserDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  code: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  edition: EditionUpdateOneWithoutTicketsInput
+}
+
+""""""
+input IntFieldUpdateOperationsInput {
+  """"""
+  set: Int
+}
+
+""""""
+input EditionUpdateOneWithoutTicketsInput {
+  """"""
+  create: EditionCreateWithoutTicketsInput
+
+  """"""
+  connect: EditionWhereUniqueInput
+
+  """"""
+  disconnect: Boolean
+
+  """"""
+  delete: Boolean
+
+  """"""
+  update: EditionUpdateWithoutTicketsDataInput
+
+  """"""
+  upsert: EditionUpsertWithoutTicketsInput
+}
+
+""""""
+input EditionUpdateWithoutTicketsDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  lottery: LotteryUpdateOneWithoutEditionsInput
+}
+
+""""""
+input LotteryUpdateOneWithoutEditionsInput {
+  """"""
+  create: LotteryCreateWithoutEditionsInput
+
+  """"""
+  connect: LotteryWhereUniqueInput
+
+  """"""
+  disconnect: Boolean
+
+  """"""
+  delete: Boolean
+
+  """"""
+  update: LotteryUpdateWithoutEditionsDataInput
+
+  """"""
+  upsert: LotteryUpsertWithoutEditionsInput
+}
+
+""""""
+input LotteryUpdateWithoutEditionsDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  deadline: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  description: StringFieldUpdateOperationsInput
+}
+
+""""""
+input LotteryUpsertWithoutEditionsInput {
+  """"""
+  update: LotteryUpdateWithoutEditionsDataInput!
+
+  """"""
+  create: LotteryCreateWithoutEditionsInput!
+}
+
+""""""
+input EditionUpsertWithoutTicketsInput {
+  """"""
+  update: EditionUpdateWithoutTicketsDataInput!
+
+  """"""
+  create: EditionCreateWithoutTicketsInput!
+}
+
+""""""
+input TicketUpdateManyWithWhereNestedInput {
+  """"""
+  where: TicketScalarWhereInput!
+
+  """"""
+  data: TicketUpdateManyDataInput!
+}
+
+""""""
+input TicketScalarWhereInput {
+  """"""
+  AND: [TicketScalarWhereInput!]
+
+  """"""
+  OR: [TicketScalarWhereInput!]
+
+  """"""
+  NOT: [TicketScalarWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  number: IntFilter
+
+  """"""
+  code: StringNullableFilter
+
+  """"""
+  editionId: StringNullableFilter
+
+  """"""
+  userId: StringNullableFilter
+}
+
+""""""
+input TicketUpdateManyDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  code: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input TicketUpsertWithWhereUniqueWithoutUserInput {
+  """"""
+  where: TicketWhereUniqueInput!
+
+  """"""
+  update: TicketUpdateWithoutUserDataInput!
+
+  """"""
+  create: TicketCreateWithoutUserInput!
+}
+
+""""""
+input LotteryCreateInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  deadline: DateTime!
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  name: String!
+
+  """"""
+  description: String!
+
+  """"""
+  editions: EditionCreateManyWithoutLotteryInput
+}
+
+""""""
+input EditionCreateManyWithoutLotteryInput {
+  """"""
+  create: [EditionCreateWithoutLotteryInput!]
+
+  """"""
+  connect: [EditionWhereUniqueInput!]
+}
+
+""""""
+input EditionCreateWithoutLotteryInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  number: Int
+
+  """"""
+  name: String!
+
+  """"""
+  tickets: TicketCreateManyWithoutEditionInput
+}
+
+""""""
+input TicketCreateManyWithoutEditionInput {
+  """"""
+  create: [TicketCreateWithoutEditionInput!]
+
+  """"""
+  connect: [TicketWhereUniqueInput!]
+}
+
+""""""
+input TicketCreateWithoutEditionInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  number: Int
+
+  """"""
+  code: String
+
+  """"""
+  user: UserCreateOneWithoutTicketsInput
+}
+
+""""""
+input UserCreateOneWithoutTicketsInput {
+  """"""
+  create: UserCreateWithoutTicketsInput
+
+  """"""
+  connect: UserWhereUniqueInput
+}
+
+""""""
+input UserCreateWithoutTicketsInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  name: String
+
+  """"""
+  phone: String!
+
+  """"""
+  code: String!
+
+  """"""
+  token: String
+}
+
+""""""
+input LotteryUpdateInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  deadline: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  description: StringFieldUpdateOperationsInput
+
+  """"""
+  editions: EditionUpdateManyWithoutLotteryInput
+}
+
+""""""
+input EditionUpdateManyWithoutLotteryInput {
+  """"""
+  create: [EditionCreateWithoutLotteryInput!]
+
+  """"""
+  connect: [EditionWhereUniqueInput!]
+
+  """"""
+  set: [EditionWhereUniqueInput!]
+
+  """"""
+  disconnect: [EditionWhereUniqueInput!]
+
+  """"""
+  delete: [EditionWhereUniqueInput!]
+
+  """"""
+  update: [EditionUpdateWithWhereUniqueWithoutLotteryInput!]
+
+  """"""
+  updateMany: [EditionUpdateManyWithWhereNestedInput!]
+
+  """"""
+  deleteMany: [EditionScalarWhereInput!]
+
+  """"""
+  upsert: [EditionUpsertWithWhereUniqueWithoutLotteryInput!]
+}
+
+""""""
+input EditionUpdateWithWhereUniqueWithoutLotteryInput {
+  """"""
+  where: EditionWhereUniqueInput!
+
+  """"""
+  data: EditionUpdateWithoutLotteryDataInput!
+}
+
+""""""
+input EditionUpdateWithoutLotteryDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  tickets: TicketUpdateManyWithoutEditionInput
+}
+
+""""""
+input TicketUpdateManyWithoutEditionInput {
+  """"""
+  create: [TicketCreateWithoutEditionInput!]
+
+  """"""
+  connect: [TicketWhereUniqueInput!]
+
+  """"""
+  set: [TicketWhereUniqueInput!]
+
+  """"""
+  disconnect: [TicketWhereUniqueInput!]
+
+  """"""
+  delete: [TicketWhereUniqueInput!]
+
+  """"""
+  update: [TicketUpdateWithWhereUniqueWithoutEditionInput!]
+
+  """"""
+  updateMany: [TicketUpdateManyWithWhereNestedInput!]
+
+  """"""
+  deleteMany: [TicketScalarWhereInput!]
+
+  """"""
+  upsert: [TicketUpsertWithWhereUniqueWithoutEditionInput!]
+}
+
+""""""
+input TicketUpdateWithWhereUniqueWithoutEditionInput {
+  """"""
+  where: TicketWhereUniqueInput!
+
+  """"""
+  data: TicketUpdateWithoutEditionDataInput!
+}
+
+""""""
+input TicketUpdateWithoutEditionDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  code: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  user: UserUpdateOneWithoutTicketsInput
+}
+
+""""""
+input UserUpdateOneWithoutTicketsInput {
+  """"""
+  create: UserCreateWithoutTicketsInput
+
+  """"""
+  connect: UserWhereUniqueInput
+
+  """"""
+  disconnect: Boolean
+
+  """"""
+  delete: Boolean
+
+  """"""
+  update: UserUpdateWithoutTicketsDataInput
+
+  """"""
+  upsert: UserUpsertWithoutTicketsInput
+}
+
+""""""
+input UserUpdateWithoutTicketsDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  phone: StringFieldUpdateOperationsInput
+
+  """"""
+  code: StringFieldUpdateOperationsInput
+
+  """"""
+  token: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input UserUpsertWithoutTicketsInput {
+  """"""
+  update: UserUpdateWithoutTicketsDataInput!
+
+  """"""
+  create: UserCreateWithoutTicketsInput!
+}
+
+""""""
+input TicketUpsertWithWhereUniqueWithoutEditionInput {
+  """"""
+  where: TicketWhereUniqueInput!
+
+  """"""
+  update: TicketUpdateWithoutEditionDataInput!
+
+  """"""
+  create: TicketCreateWithoutEditionInput!
+}
+
+""""""
+input EditionUpdateManyWithWhereNestedInput {
+  """"""
+  where: EditionScalarWhereInput!
+
+  """"""
+  data: EditionUpdateManyDataInput!
+}
+
+""""""
+input EditionScalarWhereInput {
+  """"""
+  AND: [EditionScalarWhereInput!]
+
+  """"""
+  OR: [EditionScalarWhereInput!]
+
+  """"""
+  NOT: [EditionScalarWhereInput!]
+
+  """"""
+  id: StringFilter
+
+  """"""
+  createdAt: DateTimeFilter
+
+  """"""
+  updatedAt: DateTimeFilter
+
+  """"""
+  number: IntFilter
+
+  """"""
+  name: StringFilter
+
+  """"""
+  lotteryId: StringNullableFilter
+}
+
+""""""
+input EditionUpdateManyDataInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+}
+
+""""""
+input EditionUpsertWithWhereUniqueWithoutLotteryInput {
+  """"""
+  where: EditionWhereUniqueInput!
+
+  """"""
+  update: EditionUpdateWithoutLotteryDataInput!
+
+  """"""
+  create: EditionCreateWithoutLotteryInput!
+}
+
+""""""
+input EditionCreateInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  number: Int
+
+  """"""
+  name: String!
+
+  """"""
+  tickets: TicketCreateManyWithoutEditionInput
+
+  """"""
+  lottery: LotteryCreateOneWithoutEditionsInput
+}
+
+""""""
+input EditionUpdateInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  tickets: TicketUpdateManyWithoutEditionInput
+
+  """"""
+  lottery: LotteryUpdateOneWithoutEditionsInput
+}
+
+""""""
+input TicketManyCreateInput {
+  """"""
+  count: Int!
+}
+
+""""""
+input TicketUpdateInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  code: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  edition: EditionUpdateOneWithoutTicketsInput
+
+  """"""
+  user: UserUpdateOneWithoutTicketsInput
+}
+
+""""""
+input NewsCreateInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  name: String!
+
+  """"""
+  content: String!
+}
+
+""""""
+input NewsUpdateInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  content: StringFieldUpdateOperationsInput
+}
+
+""""""
+input PartnerCreateInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  name: String!
+
+  """"""
+  description: String!
+
+  """"""
+  logo: String!
+
+  """"""
+  url: String
+}
+
+""""""
+input PartnerUpdateInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  description: StringFieldUpdateOperationsInput
+
+  """"""
+  logo: StringFieldUpdateOperationsInput
+
+  """"""
+  url: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input DeleteImageInput {
+  """"""
+  images: [String!]!
+}
+
+""""""
+input UploadImageInput {
+  """"""
+  images: [Upload!]!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+""""""
+type BatchPayload {
+  """"""
+  count: Int!
+}
+
+""""""
+input AdminCreateInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  email: String!
+
+  """"""
+  password: String!
+
+  """"""
+  repassword: String
+
+  """"""
+  token: String
+}
+
+""""""
+input AdminUpdateManyMutationInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  email: StringFieldUpdateOperationsInput
+
+  """"""
+  password: StringFieldUpdateOperationsInput
+
+  """"""
+  repassword: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  token: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input UserUpdateManyMutationInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: NullableStringFieldUpdateOperationsInput
+
+  """"""
+  phone: StringFieldUpdateOperationsInput
+
+  """"""
+  code: StringFieldUpdateOperationsInput
+
+  """"""
+  token: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input LotteryUpdateManyMutationInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  deadline: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  description: StringFieldUpdateOperationsInput
+}
+
+""""""
+input EditionUpdateManyMutationInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+}
+
+""""""
+input TicketCreateInput {
+  """"""
+  id: String
+
+  """"""
+  createdAt: DateTime
+
+  """"""
+  updatedAt: DateTime
+
+  """"""
+  number: Int
+
+  """"""
+  code: String
+
+  """"""
+  edition: EditionCreateOneWithoutTicketsInput
+
+  """"""
+  user: UserCreateOneWithoutTicketsInput
+}
+
+""""""
+input TicketUpdateManyMutationInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  number: IntFieldUpdateOperationsInput
+
+  """"""
+  code: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input NewsUpdateManyMutationInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  content: StringFieldUpdateOperationsInput
+}
+
+""""""
+input PartnerUpdateManyMutationInput {
+  """"""
+  id: StringFieldUpdateOperationsInput
+
+  """"""
+  createdAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  updatedAt: DateTimeFieldUpdateOperationsInput
+
+  """"""
+  name: StringFieldUpdateOperationsInput
+
+  """"""
+  description: StringFieldUpdateOperationsInput
+
+  """"""
+  logo: StringFieldUpdateOperationsInput
+
+  """"""
+  url: NullableStringFieldUpdateOperationsInput
+}
+
+""""""
+input LotteryRelationFilter {
+  """"""
+  is: LotteryWhereInput
+
+  """"""
+  isNot: LotteryWhereInput
+}
+
+""""""
+input EditionRelationFilter {
+  """"""
+  is: EditionWhereInput
+
+  """"""
+  isNot: EditionWhereInput
+}
+
+""""""
+input UserRelationFilter {
+  """"""
+  is: UserWhereInput
+
+  """"""
+  isNot: UserWhereInput
+}

@@ -1,0 +1,5 @@
+#ignore gqls
+/gqls
+
+#ignore local file
+*.graphql
