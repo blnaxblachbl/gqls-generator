@@ -1,4 +1,4 @@
-const { getRemoteSchema, readFromFile } = require("./index")
+const { getRemoteSchema, readFromFile } = require("../index")
 
 let [, , ...args] = process.argv
 const [endpint] = args
