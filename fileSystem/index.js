@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const mkdirp = require('mkdirp')
 const { parser } = require('../parser')
 
 function printToFile(dist, schema) {
@@ -25,7 +24,7 @@ function readFile(filePame) {
     const dir = path.resolve(process.cwd(), filePame)
     const schema = fs.readFileSync(dir, 'utf8')
     const res = parser(schema)
-    printToFile("index.js", res)
+    return res
 }
 
 module.exports = {

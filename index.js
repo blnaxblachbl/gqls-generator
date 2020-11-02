@@ -2,12 +2,11 @@ const fetch = require('node-fetch')
 const { getIntrospectionQuery, buildClientSchema, printSchema } = require('graphql')
 const { printToFile, readFile } = require('./fileSystem')
 const { parser } = require('./parser')
-const { fstat } = require('fs')
 
 
 async function getRemoteSchema(endpoint, method, headers) {
     if (!endpoint) {
-        console.log({ status: "err", message: "endpoint can't be an empty string" })
+        console.log({ status: "err", message: "Endpoint can't be an empty string" })
         return
     }
     try {
@@ -22,23 +21,19 @@ async function getRemoteSchema(endpoint, method, headers) {
 
         if (errors) {
             console.error({ status: 'err', message: JSON.stringify(errors, null, 2) })
-            // return { status: 'err', message: JSON.stringify(errors, null, 2) }
         }
         const schema = buildClientSchema(data)
         const res = parser(printSchema(schema))
+        printToFile("index.js", res)
     } catch (err) {
         console.error({ status: 'err', message: err.message })
-        // return { status: 'err', message: err.message }
     }
 }
 
 async function readFromFile(path) {
-    readFile(path)
+    const res = readFile(path)
+    printToFile("index.js", res)
 }
-
-// readFromFile("schema.graphql")
-
-// getRemoteSchema()
 
 module.exports = {
     getRemoteSchema,
