@@ -4,22 +4,19 @@ const { printToFile, readFile } = require('./fileSystem')
 const { parser } = require('./parser')
 const { fstat } = require('fs')
 
-const method = "POST"
-const headers = {
-    'Content-Type': 'application/json',
-}
-const endpoint = "http://192.168.31.175:4000/graphql"
 
-
-async function getRemoteSchema(endpoint = "", method = "POST", headers = { 'Content-Type': 'application/json', }) {
+async function getRemoteSchema(endpoint, method, headers) {
     if (!endpoint) {
         console.log({ status: "err", message: "endpoint can't be an empty string" })
         return
     }
     try {
         const { data, errors } = await fetch(endpoint, {
-            method: method,
-            headers: headers,
+            method: method ? method : "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                ...headers
+            },
             body: JSON.stringify({ query: getIntrospectionQuery() }),
         }).then(res => res.json())
 
@@ -39,7 +36,7 @@ async function readFromFile(path) {
     readFile(path)
 }
 
-readFromFile("schema.graphql")
+// readFromFile("schema.graphql")
 
 // getRemoteSchema()
 
