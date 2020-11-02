@@ -1,7 +1,7 @@
 {
   "name": "gqls-generator",
   "version": "0.0.1",
-  "description": "test parser",
+  "description": "use gqls-generator to generate gql from schema or remote server",
   "main": "index.js",
   "scripts": {
     "test": "start",
