@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { getRemoteSchema, readFromFile } = require("./index")
 
 let [, , ...args] = process.argv
