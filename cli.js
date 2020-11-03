@@ -1,7 +1,9 @@
-const { getRemoteSchema, readFromFile } = require("../index")
+const { getRemoteSchema, readFromFile } = require("./index")
 
 let [, , ...args] = process.argv
 const [endpint] = args
+
+console.log(endpint)
 
 if (endpint) {
     if (endpint.match(/^(http|https)/gm)) {

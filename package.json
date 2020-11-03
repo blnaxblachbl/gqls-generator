@@ -1,11 +1,10 @@
 {
   "name": "gqls-generator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "use gqls-generator to generate client gqls from schema or remote server",
-  "main": "index.js",
+  "main": "cli.js",
   "scripts": {
-    "test": "start",
-    "start": "node index.js"
+    "test": "start"
   },
   "author": "Tit Hardwood",
   "license": "ISC",
@@ -16,7 +15,6 @@
     "path": "^0.12.7"
   },
   "bin": {
-    "gqls-generator": "./bin/cli.js"
-  },
-  "preferGlobal": true
+    "gqls-generator": "cli.js"
+  }
 }
