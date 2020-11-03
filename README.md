@@ -20,19 +20,19 @@ Example from local schema:
 ```
 npx gqls-generator schema.graphql
 ```
-<img width="50%" src="./images/1.jpg"/>
+<img width="70%" src="./images/1.jpg"/>
 
-<img width="50%" src="./images/3.jpg"/>
+<img width="70%" src="./images/3.jpg"/>
 
-<img width="50%" src="./images/2.jpg"/>
+<img width="70%" src="./images/2.jpg"/>
 
 Example from remote server:
 
 ```
 npx gqls-generator http://192.168.31.184:4000/graphql
 ```
-<img width="50%" src="./images/1.jpg"/>
+<img width="70%" src="./images/1.jpg"/>
 
-<img width="50%" src="./images/4.jpg"/>
+<img width="70%" src="./images/4.jpg"/>
 
-<img width="35%" src="./images/2.jpg"/>
+<img width="70%" src="./images/2.jpg"/>
