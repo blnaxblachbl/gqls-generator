@@ -6,6 +6,10 @@
   "scripts": {
     "test": "start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blnaxblachbl/gqls-generator"
+  },
   "author": "Tit Hardwood",
   "license": "ISC",
   "dependencies": {
@@ -17,5 +21,15 @@
   "bin": {
     "gqls-generator": "cli.js"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "keywords": [
+    "gql",
+    "client gql",
+    "generator",
+    "query",
+    "mutation",
+    "schema",
+    "remote",
+    "generate queries"
+  ]
 }
