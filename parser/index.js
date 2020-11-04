@@ -1,5 +1,4 @@
 function parser(schema) {
-    const typesName = schema.match(/^type([\w\s])*{$/gm).map(item => item.replace(/(type| |{)/gm, ""))
     const queries = getType(schema, "Query")
     const mutations = getType(schema, "Mutation")
     let result = `import { gql } from "@apollo/client"\n\n`
