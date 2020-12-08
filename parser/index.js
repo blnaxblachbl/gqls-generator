@@ -78,10 +78,10 @@ function setTabs(defaultTabs, level) {
 
 function getType(schema, typeName, flags = 'gm') {
     const reg1 = new RegExp(`^type(${typeName}|\\s)*{([\\w\\)\\("!:,\\s\\[\\]])*}`, flags)
-    const reg2 = new RegExp(`(type|${typeName}|\\s|{|})|`, flags)
+    const reg2 = new RegExp(`(type|${typeName}|\\s|'|"|{|})|`, flags)
     const types = schema.match(reg1)
     if (types && types.length > 0) {
-        return types.map(item => item.replace(reg2, ""))[0].split(`""""""`)
+        return types[0].split(`\n`).map(item => item.replace(reg2, "")).filter(item => item)
     } else {
         return []
     }
