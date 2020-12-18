@@ -8,9 +8,8 @@ const {
 
 const parser = (schema) => {
     const document = parse(schema)
-    // let result = 'import { gql } from "@apollo/client"\n\n'
-    let queriesString = ''
-    let mutationsString = ''
+    let queriesArray = []
+    let mutationsArray = []
 
     if (document && document.definitions && document.definitions.length > 0) {
         const { definitions } = document
@@ -18,32 +17,29 @@ const parser = (schema) => {
         const queries = definitions.find(item => item.name.value === "Query")
         const mutations = definitions.find(item => item.name.value === "Mutation")
         if (queries) {
-            let res = queries.fields.map((item, index) => {
+            queriesArray = queries.fields.map((item, index) => {
                 let q = queryParser(definitions, item, "query")
                 return q
             })
-            queriesString = queriesString + res.join("\n")
         }
         if (mutations) {
-            let res = mutations.fields.map((item, index) => {
+            mutationsArray = mutations.fields.map((item, index) => {
                 let q = queryParser(definitions, item, "mutation")
                 return q
             })
-            mutationsString = mutationsString + res.join("\n")
         }
     } else {
         console.log("error document")
     }
-    // result = result + queriesString + "\n" + mutationsString
 
     return {
-        queries: queriesString,
-        mutations: mutationsString
+        queries: queriesArray,
+        mutations: mutationsArray
     }
 }
 
 const queryParser = (definitions, current = null, title = "query") => {
-    let query = ""
+    let query = {}
 
     if (current) {
         const queryName = current.name.value
@@ -51,7 +47,8 @@ const queryParser = (definitions, current = null, title = "query") => {
         const curetnTypeName = getBodyTypeName(current.type)
         const body = budyParser(definitions, current.type, [curetnTypeName])
 
-        query = 'export const ' + camelToDelimiter(queryName) + ' = gql`\n\t' + arguments[0] + '{\n\t\t' + queryName + arguments[1] + body + '\n\t}\n' + '`'
+        query["returnTypeName"] = curetnTypeName
+        query["queryString"] = 'export const ' + camelToDelimiter(queryName) + ' = gql`\n\t' + arguments[0] + '{\n\t\t' + queryName + arguments[1] + body + '\n\t}\n' + '`'
     }
     return query
 }

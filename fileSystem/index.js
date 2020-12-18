@@ -5,9 +5,9 @@ const { parser } = require('../parser')
 function printToFile(schemaObj, saveType) {
     const { queries, mutations } = schemaObj
     const dist = "index.js"
-    
+
     if (saveType == 0) {
-        const schema = 'import { gql } from "@apollo/client"\n\n' + queries + '\n' + mutations
+        const schema = 'import { gql } from "@apollo/client"\n\n' + queries.map(item => item.queryString).join('\n') + '\n' + mutations.map(item => item.queryString).join('\n')
 
         try {
             const dir = path.resolve(process.cwd(), "gqls")
@@ -28,10 +28,49 @@ function printToFile(schemaObj, saveType) {
         }
     }
 
+    if (saveType === 1) {
+        const dir = path.resolve(process.cwd(), "gqls")
+        const dist = "index.js"
+
+        const data = [...queries, ...mutations]
+        const returnTypes = []
+
+        for (let current of data) {
+            const exist = returnTypes.find(item => item.type === current.returnTypeName)
+            if (exist) {
+                exist.queries = exist.queries + '\n' + current.queryString
+            } else {
+                returnTypes.push({
+                    type: current.returnTypeName,
+                    queries: current.queryString
+                })
+            }
+        }
+        try {
+            if (fs.existsSync(dir)) {
+                fs.rmdirSync(dir, { recursive: true })
+                fs.mkdirSync(dir)
+            }
+
+            for (let current of returnTypes) {
+                const newDir = path.resolve(process.cwd(), `gqls/${current.type.toLowerCase()}`)
+                const output = path.resolve(process.cwd(), `gqls/${current.type.toLowerCase()}`, dist)
+                const schema = 'import { gql } from "@apollo/client"\n\n' + current.queries
+
+                fs.mkdirSync(newDir)
+                fs.writeFileSync(output, schema)
+            }
+
+            console.log({ status: 'ok, schema created' })
+        } catch (err) {
+            console.log({ status: 'err', message: err.message })
+        }
+    }
+
     if (saveType == 2) {
         const dir = path.resolve(process.cwd(), "gqls")
-        const queriesSchema = 'import { gql } from "@apollo/client"\n\n' + queries
-        const mutationsSchema = 'import { gql } from "@apollo/client"\n\n' + mutations
+        const queriesSchema = 'import { gql } from "@apollo/client"\n\n' + queries.map(item => item.queryString).join('\n')
+        const mutationsSchema = 'import { gql } from "@apollo/client"\n\n' + mutations.map(item => item.queryString).join('\n')
 
         const queriesDir = path.resolve(process.cwd(), "gqls/queries")
         const mutationsDir = path.resolve(process.cwd(), "gqls/mutations")

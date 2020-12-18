@@ -7,8 +7,7 @@ const options = [{
     type: 'list',
     name: 'type',
     message: 'Please choose how to save your data',
-    choices: ['In one file', 'Split by queries and mutations types'],
-    // choices: ['In one file', 'Split by return types', 'Split by queries and mutations types'],
+    choices: ['In one file', 'Split by return types', 'Split by queries and mutations types'],
     default: 'In one index.js file',
 
 }]
