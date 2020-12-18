@@ -1,6 +1,4 @@
-const {
-    parse
-} = require('graphql')
+const { parse } = require('graphql')
 
 const {
     camelToDelimiter,
@@ -13,9 +11,10 @@ const parser = (schema) => {
     let result = 'import { gql } from "@apollo/client"\n\n'
     let queriesString = ''
     let mutationsString = ''
+
     if (document && document.definitions && document.definitions.length > 0) {
         const { definitions } = document
-        // console.log(definitions)
+
         const queries = definitions.find(item => item.name.value === "Query")
         const mutations = definitions.find(item => item.name.value === "Mutation")
         if (queries) {
@@ -35,13 +34,15 @@ const parser = (schema) => {
     } else {
         console.log("error document")
     }
+
     result = result + queriesString + "\n" + mutationsString
-    // console.log(result)
+
     return result
 }
 
 const queryParser = (definitions, current = null, title = "query") => {
     let query = ""
+
     if (current) {
         const queryName = current.name.value
         const arguments = argumentsParser(queryName, current.arguments, title)
@@ -49,7 +50,6 @@ const queryParser = (definitions, current = null, title = "query") => {
         const body = budyParser(definitions, current.type, [curetnTypeName])
 
         query = 'export const ' + camelToDelimiter(queryName) + ' = gql`\n\t' + arguments[0] + '{\n\t\t' + queryName + arguments[1] + body + '\n\t}\n' + '`'
-        // console.log(query)
     }
     return query
 }
@@ -62,7 +62,6 @@ const argumentsParser = (queryName = "", arguments = [], title) => {
         for (let arg of arguments) {
             const { name, type } = arg
             argRes = argRes + `\n\t\t$${name.value}` + ": " + argumentTypeParser(type)
-
             res1 = `${title}(${argRes}\n\t)`
             res2 = '(\n\t\t\t' + name.value + ": $" + name.value + '\n\t\t)'
         }
@@ -73,6 +72,7 @@ const argumentsParser = (queryName = "", arguments = [], title) => {
 
 const argumentTypeParser = (data) => {
     let res = ''
+
     if (data) {
         const {
             kind,
@@ -89,6 +89,7 @@ const argumentTypeParser = (data) => {
             res = argumentTypeParser(type) + `!`
         }
     }
+
     return res
 }
 
@@ -106,11 +107,14 @@ const budyParser = (definitions, data, prevTypeName = []) => {
 
                 const fieldTypeName = getBodyTypeName(f.type)
                 const prevFieldTypeName = prevTypeName[level - 2]
+                const nextType = definitions.find(item => item.name.value === fieldTypeName)
 
-                if (prevFieldTypeName !== fieldTypeName) {
-                    if (level < 3) {
+                if (level < 4 && prevFieldTypeName !== fieldTypeName) {
+                    if (nextType) {
                         const nextBody = budyParser(definitions, f.type, [...prevTypeName, fieldTypeName])
-                        name = f.name.value + nextBody
+                        if (nextBody) {
+                            name = f.name.value + nextBody
+                        }
                     } else {
                         name = f.name.value
                     }
@@ -121,6 +125,7 @@ const budyParser = (definitions, data, prevTypeName = []) => {
             }
         }
     }
+
     return res ? `{${res}\n${setTabs(1, level)}}` : ''
 }
 
