@@ -1,94 +1,142 @@
-function parser(schema) {
-    const queries = getType(schema, "Query")
-    const mutations = getType(schema, "Mutation")
-    let result = `import { gql } from "@apollo/client"\n\n`
-    if (queries.length > 0) {
-        const gqls = queries.reduce((acc, current) => {
-            if (current) {
-                const gqlQuery = queryParser(schema, current, 0, "", "query")
-                return acc ? acc + gqlQuery : gqlQuery
-            }
-        }, "")
-        result = result + gqls
+const {
+    parse
+} = require('graphql')
+
+const {
+    camelToDelimiter,
+    setTabs
+} = require('./utils')
+
+
+const parser = (schema) => {
+    const document = parse(schema)
+    let result = 'import { gql } from "@apollo/client"\n\n'
+    let queriesString = ''
+    let mutationsString = ''
+    if (document && document.definitions && document.definitions.length > 0) {
+        const { definitions } = document
+        // console.log(definitions)
+        const queries = definitions.find(item => item.name.value === "Query")
+        const mutations = definitions.find(item => item.name.value === "Mutation")
+        if (queries) {
+            let res = queries.fields.map((item, index) => {
+                let q = queryParser(definitions, item, "query")
+                return q
+            })
+            queriesString = queriesString + res.join("\n")
+        }
+        if (mutations) {
+            let res = mutations.fields.map((item, index) => {
+                let q = queryParser(definitions, item, "mutation")
+                return q
+            })
+            mutationsString = mutationsString + res.join("\n")
+        }
+    } else {
+        console.log("error document")
     }
-    if (mutations.length > 0) {
-        const gqls = mutations.reduce((acc, current) => {
-            if (current) {
-                const gqlMutation = queryParser(schema, current, 0, "", "mutation")
-                return acc ? acc + gqlMutation : gqlMutation
-            }
-        }, "")
-        result = result + gqls
-    }
+    result = result + queriesString + "\n" + mutationsString
+    // console.log(result)
     return result
 }
 
-function queryParser(schema, queryString = "", level = 0, previousTypeName = "", title = "query") {
-    let query = queryString.match(/\w*(.*\s*\w*)?:/gm)[0]
-    const queryName = query.replace(/\(.*\)/gm, "").replace(/:/, "")
+const queryParser = (definitions, current = null, title = "query") => {
+    let query = ""
+    if (current) {
+        const queryName = current.name.value
+        const arguments = argumentsParser(queryName, current.arguments, title)
+        const curetnTypeName = getBodyTypeName(current.type)
+        const body = budyParser(definitions, current.type, [curetnTypeName])
 
-    const returnType = queryString.replace(query, "")
-    const returnTypeName = returnType.replace(/[\[\]!\s]/gm, "")
+        query = 'export const ' + camelToDelimiter(queryName) + ' = gql`\n\t' + arguments[0] + '{\n\t\t' + queryName + arguments[1] + body + '\n\t}\n' + '`'
+        // console.log(query)
+    }
+    return query
+}
 
-    const bodyTypes = getType(schema, returnTypeName)
-    const body = bodyTypes.reduce((acc, current) => {
-        if (current) {
-            const tabs = setTabs(3, level)
-            const name = current.replace(/\(.*\)/gm, "").split(":")[0]
-            const returnType = current.replace(/\(.*\)/gm, "").split(":")[1]
-            const returnTypeName = returnType ? returnType.replace(/[\[\]!\s]*/gm, "") : null
-            const nextType = getType(schema, returnTypeName)
-            if (current && returnType && nextType.length === 0) {
-                if (name) {
-                    acc = acc + tabs + name + "\n"
+const argumentsParser = (queryName = "", arguments = [], title) => {
+    let res1 = ''
+    let res2 = ''
+    let argRes = ''
+    if (arguments.length > 0) {
+        for (let arg of arguments) {
+            const { name, type } = arg
+            argRes = argRes + `\n\t\t$${name.value}` + ": " + argumentTypeParser(type)
+
+            res1 = `${title}(${argRes}\n\t)`
+            res2 = '(\n\t\t\t' + name.value + ": $" + name.value + '\n\t\t)'
+        }
+    }
+
+    return [res1, res2]
+}
+
+const argumentTypeParser = (data) => {
+    let res = ''
+    if (data) {
+        const {
+            kind,
+            type,
+            name,
+        } = data
+        if (kind === "NamedType") {
+            res = name.value
+        }
+        if (kind === "ListType") {
+            res = `[${argumentTypeParser(type)}]`
+        }
+        if (kind === "NonNullType") {
+            res = argumentTypeParser(type) + `!`
+        }
+    }
+    return res
+}
+
+const budyParser = (definitions, data, prevTypeName = []) => {
+    let res = ''
+    let returnTypeName = getBodyTypeName(data)
+    let returnType = definitions.find(item => item.name.value === returnTypeName)
+    const level = prevTypeName.length
+
+    if (returnType) {
+        const { fields } = returnType
+        if (fields) {
+            for (let f of fields) {
+                let name = ''
+
+                const fieldTypeName = getBodyTypeName(f.type)
+                const prevFieldTypeName = prevTypeName[level - 2]
+
+                if (prevFieldTypeName !== fieldTypeName) {
+                    if (level < 3) {
+                        const nextBody = budyParser(definitions, f.type, [...prevTypeName, fieldTypeName])
+                        name = f.name.value + nextBody
+                    } else {
+                        name = f.name.value
+                    }
                 }
-            } else if (nextType.length > 0 && level < 2 && previousTypeName !== returnTypeName) {
-                const nextQuery = queryParser(schema, current, level + 1, returnTypeName)
-                acc = acc + tabs + nextQuery + "\n"
+                if (name) {
+                    res = res + `\n${setTabs(2, level)}${name}`
+                }
             }
         }
-        return acc
-    }, "")
-
-    const queryArguments = query.match(/\(.*\)/gm)
-    let arguments = ""
-    let bodyArguments = ""
-    if (queryArguments && queryArguments.length > 0) {
-        const str = `${queryArguments}`
-        arguments = str.replace(/[\(\)]/gm, "").split(",").reduce((acc, current) => {
-            return acc + `\t\t$${current}\n`
-        }, "")
     }
-    if (queryArguments && queryArguments.length > 0) {
-        const str = `${queryArguments}`
-        bodyArguments = str.replace(/[\(\)]/gm, "").split(",").reduce((acc, current) => {
-            return acc + `\t\t\t${current.split(":")[0]}: $${current.split(":")[0]}\n`
-        }, "")
-    }
-    if (level > 0) {
-        return queryName + (body ? `{\n${body}${setTabs(2, level)}}` : "") + `${setTabs(1, level)}`
-    }
-    const gqlName = camelToDelimiter(queryName)
-    return "export const " + gqlName + " = gql`\n" + `\t${title} ` + (arguments ? `(\n${arguments}\t)` : "") + "{\n\t\t" + `${queryName}${bodyArguments ? "(\n" + bodyArguments + "\t\t)" : ""}` + (body ? `{\n${body}\t\t}\n` : "\n") + "\t}\n`\n"
+    return res ? `{${res}\n${setTabs(1, level)}}` : ''
 }
 
-function setTabs(defaultTabs, level) {
-    return '\t'.repeat(defaultTabs + level)
-}
+const getBodyTypeName = (data) => {
+    let typeName = ''
 
-function getType(schema, typeName, flags = 'gm') {
-    const reg1 = new RegExp(`^type(${typeName}|\\s)*{([\\w\\)\\("!:,\\s\\[\\]])*}`, flags)
-    const reg2 = new RegExp(`(type|${typeName}|\\s|'|"|{|})|`, flags)
-    const types = schema.match(reg1)
-    if (types && types.length > 0) {
-        return types[0].split(`\n`).map(item => item.replace(reg2, "")).filter(item => item)
-    } else {
-        return []
+    if (data) {
+        const { kind, type } = data
+        if (kind === "NamedType") {
+            typeName = data.name.value
+        } else {
+            typeName = getBodyTypeName(type)
+        }
     }
-}
 
-function camelToDelimiter(name) {
-    return name.split("").map(item => item === item.toLowerCase() ? item.toUpperCase() : `_${item.toUpperCase()}`).join("")
+    return typeName
 }
 
 module.exports = {
