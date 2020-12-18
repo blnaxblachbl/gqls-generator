@@ -8,7 +8,7 @@ const {
 
 const parser = (schema) => {
     const document = parse(schema)
-    let result = 'import { gql } from "@apollo/client"\n\n'
+    // let result = 'import { gql } from "@apollo/client"\n\n'
     let queriesString = ''
     let mutationsString = ''
 
@@ -34,10 +34,12 @@ const parser = (schema) => {
     } else {
         console.log("error document")
     }
+    // result = result + queriesString + "\n" + mutationsString
 
-    result = result + queriesString + "\n" + mutationsString
-
-    return result
+    return {
+        queries: queriesString,
+        mutations: mutationsString
+    }
 }
 
 const queryParser = (definitions, current = null, title = "query") => {
@@ -63,8 +65,12 @@ const argumentsParser = (queryName = "", arguments = [], title) => {
             const { name, type } = arg
             argRes = argRes + `\n\t\t$${name.value}` + ": " + argumentTypeParser(type)
             res1 = `${title}(${argRes}\n\t)`
-            res2 = '(\n\t\t\t' + name.value + ": $" + name.value + '\n\t\t)'
+            res2 = res2 + ("\n\t\t\t" + name.value + ": $" + name.value)
         }
+    }
+
+    if (res2) {
+        res2 = '(' + res2 + '\n\t\t)'
     }
 
     return [res1, res2]

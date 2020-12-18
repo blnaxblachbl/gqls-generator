@@ -4,7 +4,7 @@ const { printToFile, readFile } = require('./fileSystem')
 const { parser } = require('./parser')
 
 
-async function getRemoteSchema(endpoint, method, headers) {
+async function getRemoteSchema(endpoint, method, headers, saveType) {
     if (!endpoint) {
         console.log({ status: "err", message: "Endpoint can't be an empty string" })
         return
@@ -24,15 +24,15 @@ async function getRemoteSchema(endpoint, method, headers) {
         }
         const schema = buildClientSchema(data)
         const res = parser(printSchema(schema))
-        printToFile("index.js", res)
+        printToFile(res, saveType)
     } catch (err) {
         console.error({ status: 'err', message: err.message })
     }
 }
 
-async function readFromFile(path) {
+async function readFromFile(path, saveType) {
     const res = readFile(path)
-    printToFile("index.js", res)
+    printToFile(res, saveType)
 }
 
 module.exports = {
