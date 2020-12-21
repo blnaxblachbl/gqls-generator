@@ -15,16 +15,6 @@ Options:
  -m    Add a fetch method (POST or GET) 
 ```
 
-Select data saving format: 
-
-<img width="70%" src="./images/5.jpg"/>
-
-<img width="70%" src="./images/6.jpg"/>
-
-<img width="70%" src="./images/7.jpg"/>
-
-<img width="70%" src="./images/2.jpg"/>
-
 Example from local schema:
 
 ```
@@ -46,3 +36,17 @@ npx gqls-generator http://192.168.31.184:4000/graphql
 <img width="70%" src="./images/4.jpg"/>
 
 <img width="70%" src="./images/2.jpg"/>
+
+Select data saving format: 
+
+
+Split by return types
+
+<img width="70%" src="./images/5.jpg"/>
+
+All in one index.js file
+<img width="70%" src="./images/2.jpg"/>
+Split by return types
+<img width="70%" src="./images/6.jpg"/>
+Split by queries and mutations
+<img width="70%" src="./images/7.jpg"/>
