@@ -15,6 +15,16 @@ Options:
  -m    Add a fetch method (POST or GET) 
 ```
 
+Select data saving format: 
+
+<img width="70%" src="./images/5.jpg"/>
+
+<img width="70%" src="./images/6.jpg"/>
+
+<img width="70%" src="./images/7.jpg"/>
+
+<img width="70%" src="./images/2.jpg"/>
+
 Example from local schema:
 
 ```
