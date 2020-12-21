@@ -15,7 +15,7 @@ Options:
  -m    Add a fetch method (POST or GET) 
 ```
 
-Example from local schema:
+### Example from local schema:
 
 ```
 npx gqls-generator schema.graphql
@@ -26,7 +26,7 @@ npx gqls-generator schema.graphql
 
 <img width="70%" src="./images/2.jpg"/>
 
-Example from remote server:
+### Example from remote server:
 
 ```
 npx gqls-generator http://192.168.31.184:4000/graphql
@@ -37,16 +37,16 @@ npx gqls-generator http://192.168.31.184:4000/graphql
 
 <img width="70%" src="./images/2.jpg"/>
 
-## Select data saving format: 
+### Select data saving format: 
 
-### Split by return types
+#### Split by return types
 <img width="70%" src="./images/5.jpg"/>
 
-### All in one index.js file
+#### All in one index.js file
 <img width="70%" src="./images/2.jpg"/>
 
-### Split by return types
+#### Split by return types
 <img width="70%" src="./images/6.jpg"/>
 
-### Split by queries and mutations
+#### Split by queries and mutations
 <img width="70%" src="./images/7.jpg"/>
