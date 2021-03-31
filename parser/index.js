@@ -115,9 +115,7 @@ const budyParser = (definitions, data, prevTypeName = []) => {
                 if (level < 4 && prevFieldTypeName !== fieldTypeName) {
                     if (nextType) {
                         const nextBody = budyParser(definitions, f.type, [...prevTypeName, fieldTypeName])
-                        if (nextBody) {
-                            name = f.name.value + nextBody
-                        }
+                        name = f.name.value + nextBody
                     } else {
                         name = f.name.value
                     }
