@@ -129,7 +129,7 @@ const budyParser = (definitions, data, prevTypeName = []) => {
             ]);
             if (nextBody) {
               name = f.name.value + nextBody;
-            } else {
+            } else if (nextType.kind !== "ObjectTypeDefinition") {
               name = f.name.value;
             }
           } else {
