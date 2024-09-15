@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { getRemoteSchema, readFromFile } = require("./index")
+const { getRemoteSchema, readFromFile } = require("./src/index")
 const inquirer = require('inquirer')
 
 const options = [{

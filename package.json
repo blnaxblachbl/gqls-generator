@@ -33,5 +33,11 @@
     "remote",
     "generate queries",
     "apollo client"
-  ]
+  ],
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.14.9",
+    "@types/node-fetch": "^2.6.11",
+    "typescript": "^5.5.2"
+  }
 }
